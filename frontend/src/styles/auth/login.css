@@ -1,0 +1,639 @@
+/* ===== LINKS ===== */
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.login-links a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1023px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .form-side {
+        padding: 60px 24px;
+    }
+
+    /* Stack footer links on tablet/mobile */
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* ===== FORM HEADER ===== */
+.login-form-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    /* Black as requested */
+    margin-bottom: 8px;
+}
+
+.login-form-header p {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+/* ===== ERROR TEXT ===== */
+.error-text {
+    color: #ef4444 !important;
+    /* Red as requested */
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+    text-align: left;
+    /* explicitly left-align labels */
+}
+
+.input-field {
+    height: 48px;
+    width: 100%;
+    border: 1px solid #e2e8f0 !important;
+    /* force consistent light border */
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 16px;
+    background-color: #ffffff !important;
+    /* Force white background to prevent dark mode issues */
+    color: #0f172a !important;
+    /* Force dark text color */
+    box-sizing: border-box;
+    /* ensure padding doesn't affect width */
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none !important;
+    /* remove default outlines */
+    margin-bottom: 0;
+}
+
+.input-field:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.input-field.password-input {
+    padding-right: 48px;
+    /* moved from inline style to class */
+}
+
+.input-field::placeholder {
+    color: #989797 !important;
+    opacity: 1;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    background: none;
+    border: none;
+    outline: none;
+    /* ✅ add */
+    box-shadow: none;
+    /* ✅ add */
+    cursor: pointer;
+    padding: 0;
+    /* ✅ add */
+}
+
+.password-toggle:hover {
+    color: #000000;
+}
+
+/* 🔥 IMPORTANT: remove focus border */
+.password-toggle:focus,
+.password-toggle:focus-visible,
+.password-toggle:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+
+/* ===== GOOGLE BUTTON ===== */
+.google-btn {
+    height: 48px;
+    width: 100%;
+    background-color: #f8fafc;
+    color: #0f172a !important;
+    /* Force black/dark text as requested */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 24px;
+}
+
+.google-btn:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.signin-btn {
+    height: 48px;
+    width: 100%;
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+    transition: all 0.2s;
+}
+
+.signin-btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
+}
+
+.footer-links {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.link-primary {
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.link-text {
+    color: #64748b;
+}
+
+/* ===== DIVIDER (FIXED) ===== */
+.divider {
+    position: relative;
+    width: 100%;
+    margin: 22px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e5e7eb;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.divider span {
+    position: relative;
+    background-color: #ffffff;
+    /* MATCH WHITE FORM BACKGROUND */
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #9ca3af;
+    text-transform: uppercase;
+    z-index: 2;
+    /* ABOVE THE LINE */
+}
+
+
+.visual-root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.visual-wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+}
+
+
+/* Glows */
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.glow-main {
+    inset: 0;
+    background: linear-gradient(135deg, #bfdbfe, #e9d5ff, #fbcfe8);
+    opacity: 0.35;
+}
+
+.glow-green {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, #86efac, #22d3ee);
+    left: -60px;
+    bottom: 40px;
+    opacity: 0.4;
+}
+
+.glow-yellow {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, #fde68a, #fb923c);
+    right: -40px;
+    top: -60px;
+    opacity: 0.45;
+}
+
+.glow-pink {
+    width: 240px;
+    height: 240px;
+    background: linear-gradient(135deg, #f472b6, #fb7185);
+    right: 40px;
+    top: 80px;
+    border-radius: 20px;
+    transform: rotate(12deg);
+    opacity: 0.5;
+}
+
+/* Cards */
+.card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-left {
+    width: 90px;
+    height: 120px;
+    top: 80px;
+    left: 40px;
+    transform: rotate(-15deg);
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 12px;
+}
+
+.line {
+    width: 50%;
+    height: 6px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.purple {
+    background: #3b82f6;
+}
+
+/* Right Card */
+.card-right {
+    width: 130px;
+    height: 160px;
+    top: 100px;
+    right: 0;
+    transform: rotate(10deg);
+    padding: 14px;
+}
+
+.text-lines span {
+    display: block;
+    height: 6px;
+    background: #facc15;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.icon.sparkle {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 28px;
+}
+
+/* Bottom Card */
+.card-bottom {
+    width: 160px;
+    height: 100px;
+    bottom: 80px;
+    left: 0;
+    transform: rotate(18deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.trend {
+    font-size: 26px;
+}
+
+
+/* Circle Card */
+.dots-circle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 60px;
+    right: 60px;
+
+    border-radius: 50%;
+    background: #fde2e7;
+    /* light pink card */
+    box-shadow: 0 12px 30px rgba(251, 113, 133, 0.25);
+}
+
+/* Circle Card */
+.dots-circle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 60px;
+    right: 60px;
+
+    border-radius: 50%;
+    background: radial-gradient(circle at top left,
+            #ffe9ee,
+            #ffe8ec);
+
+    box-shadow: 0 16px 30px rgba(251, 113, 133, 0.25);
+}
+
+/* Common dot */
+.dots-circle .dot {
+    position: absolute;
+    background: #fb7185;
+    border-radius: 50%;
+}
+
+/* Center big dot */
+.dot.center {
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Surrounding dots (uneven like image) */
+.dot.small {
+    width: 10px;
+    height: 10px;
+}
+
+.dot.medium {
+    width: 10px;
+    height: 10px;
+}
+
+.dot.tiny {
+    width: 5px;
+    height: 5px;
+}
+
+/* Positions */
+.s1 {
+    top: 28%;
+    left: 38%;
+}
+
+.s2 {
+    top: 22%;
+    right: 34%;
+}
+
+.s3 {
+    bottom: 32%;
+    left: 26%;
+}
+
+.s4 {
+    bottom: 26%;
+    right: 44%;
+}
+
+.s5 {
+    top: 56%;
+    right: 24%;
+}
+
+
+
+/* Center Ring */
+.center-ring {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-ring::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    position: absolute;
+}
+
+.center-badge {
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    color: white;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.visual-root .visual-text {
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000 !important;
+    /* Pure Black as requested */
+}
+
+
+.trend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === GREEN UPWARD ARROW ICON === */
+.arrow-icon {
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M10 46 L28 28 L40 40 L58 18' fill='none' stroke='%2366BB6A' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M48 18 L58 18 L58 28' fill='none' stroke='%2366BB6A' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* divider between arrows */
+.card-bottom .divider {
+    width: 2px;
+    height: 34px;
+    background-color: rgba(102, 187, 106, 0.35);
+    border-radius: 2px;
+}
+
+/* Common card base */
+.card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* LEFT FLOATING CARD */
+.card-left {
+    width: 96px;
+    height: 120px;
+    top: 60px;
+    left: 30px;
+    transform: rotate(-14deg);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Purple dot (top-left) */
+.card-left .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+/* Purple bottom line */
+.card-left .line {
+    width: 60%;
+    height: 6px;
+    border-radius: 6px;
+    align-self: flex-end;
+}
+
+/* Color */
+.purple {
+    background-color: #3b82f6;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 2;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+
+.glow {
+    animation: glowPulse 8s ease-in-out infinite;
+}
+
+.center-ring {
+    animation: float 5s ease-in-out infinite;
+}
+
+.center-badge {
+    animation: floatRotate 6s ease-in-out infinite;
+}
+
+.card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-left {
+    animation-duration: 7s;
+}
+
+.card-right {
+    animation: floatRotate 8s ease-in-out infinite;
+}
+
+.card-bottom {
+    animation: floatSlow 9s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    50% {
+        transform: translateY(-12px) translateX(4px);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}

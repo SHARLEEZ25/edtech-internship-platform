@@ -1,0 +1,251 @@
+/* ==================== Unified Sidebar Styles ==================== */
+.dashboard-sidebar,
+.recruiter-sidebar {
+    width: 16rem;
+    height: 100vh;
+    flex-shrink: 0;
+    background-color: #ffffff !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.04) !important;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: width 0.3s ease;
+}
+
+.dark .dashboard-sidebar,
+.dark .recruiter-sidebar {
+    background-color: #ffffff !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+.sidebar-nav-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #64748b;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+}
+
+.dark .sidebar-link {
+    color: var(--text-muted-dark);
+}
+
+.sidebar-link:hover {
+    background-color: rgba(243, 244, 246, 1);
+    color: var(--primary);
+}
+
+.dark .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.sidebar-link.active {
+    background: #4f86f7;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(79, 134, 247, 0.2);
+}
+
+.sidebar-link.active .material-symbols-outlined {
+    color: white !important;
+}
+
+.sidebar-link .material-symbols-outlined {
+    font-size: 1.25rem;
+}
+
+.sidebar-badge {
+    position: absolute;
+    right: 1rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Profile Avatar Style for the link */
+.sidebar-link .sidebar-avatar-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: #e2e8f0;
+}
+
+/* Dropdown Menu */
+.sidebar-profile-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dark .sidebar-profile-dropdown {
+    background-color: var(--card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-dropdown-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.dark .profile-dropdown-item {
+    color: var(--text-muted-dark);
+}
+
+.profile-dropdown-item:hover {
+    background-color: rgba(243, 244, 246, 1);
+    color: var(--primary);
+}
+
+.dark .profile-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+/* ... existing styles ... */
+
+.profile-dropdown-item.sign-out:hover {
+    color: var(--accent-red);
+}
+
+/* ==================== Mobile Responsive Styles ==================== */
+
+/* Toggle Button */
+.mobile-sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 900;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+}
+
+.mobile-sidebar-toggle:hover {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.mobile-sidebar-toggle .material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+.dark .mobile-sidebar-toggle {
+    background: var(--card-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
+}
+
+/* Mobile Overlay */
+.sidebar-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Sidebar Behavior */
+@media (max-width: 1024px) {
+    .mobile-sidebar-toggle {
+        display: flex;
+    }
+
+    .dashboard-sidebar,
+    .recruiter-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 18rem;
+        height: 100vh;
+        background-color: white !important;
+        transform: translateX(-100%) !important;
+        z-index: 999;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15) !important;
+        border-right: none !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+        overflow-y: auto;
+    }
+
+    .dashboard-sidebar.open,
+    .recruiter-sidebar.open {
+        transform: translateX(0) !important;
+    }
+}

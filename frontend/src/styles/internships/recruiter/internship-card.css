@@ -1,0 +1,317 @@
+.internship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.internship-card-premium {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    /* Premium highlight */
+}
+
+.internship-card-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Status Highlights */
+.internship-card-premium.status-open {
+    border-color: #059669;
+}
+
+.internship-card-premium.status-draft {
+    border-color: #d97706;
+}
+
+.internship-card-premium.status-closed {
+    border-color: #dc2626;
+}
+
+/* Header Section */
+.card-header-premium {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-title-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.card-company-text {
+    font-size: 0.9375rem;
+    color: #666;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Status Badge Pills */
+.status-badge-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-badge-pill.status-open {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.status-badge-pill.status-draft {
+    background: #fffbeb;
+    color: #f59e0b;
+}
+
+.status-badge-pill.status-closed {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.status-dot-icon {
+    font-size: 0.6rem;
+}
+
+.status-icon-small {
+    font-size: 1rem;
+}
+
+/* Details Section */
+.card-details-premium {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.detail-icon-mini {
+    color: #999;
+    font-size: 1.25rem;
+}
+
+.card-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 0.25rem 0;
+}
+
+/* Footer Section */
+.card-footer-premium {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.applicants-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.applicants-header-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.not-published-text,
+.no-applicants-yet {
+    font-size: 0.95rem;
+    color: #bbb;
+    font-weight: 600;
+}
+
+.applicants-visual-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.applicant-avatars-stack {
+    display: flex;
+    align-items: center;
+}
+
+.stack-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -8px;
+    background: #f1f5f9;
+}
+
+.stack-avatar:first-child {
+    margin-left: 0;
+}
+
+.stack-more {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #666;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -8px;
+    border: 2px solid white;
+}
+
+.total-count-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Actions Row */
+.card-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-icon-circular {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1.5px solid #f1f5f9;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-icon-circular:hover {
+    background: #f8fafc;
+    color: #666;
+    border-color: #e2e8f0;
+}
+
+.btn-action-premium {
+    padding: 0.625rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1.5px solid transparent;
+}
+
+.btn-open-mode {
+    background: #eff6ff;
+    color: #4285F4;
+    border: 1.5px solid #dbeafe;
+}
+
+.btn-open-mode:hover {
+    background: #4285F4;
+    color: white;
+    border-color: #4285F4;
+}
+
+.btn-draft-mode {
+    background: #f1f3f6;
+    color: #333;
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-draft-mode:hover {
+    background: #e5e7eb;
+}
+
+.btn-closed-mode {
+    background: transparent;
+    color: #666;
+    border: 1.5px solid #e2e8f0;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-closed-mode:hover {
+    background: #f8fafc;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .internship-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .internship-card-premium {
+        padding: 1.25rem;
+    }
+
+    .card-title-main {
+        font-size: 1.125rem;
+    }
+
+    .card-footer-premium {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .card-actions-row {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-action-premium {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-status-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .status-badge-pill {
+        align-self: flex-start;
+    }
+}

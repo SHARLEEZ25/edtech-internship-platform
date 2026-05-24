@@ -1,0 +1,48 @@
+/* Progress Section */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.step-text {
+    color: #2e74ff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.percentage-text {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.progress-bar-stack {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.progress-segment {
+    height: 0.5rem;
+    flex: 1;
+    border-radius: 9999px;
+    background-color: #f1f5f9;
+}
+
+.dark .progress-segment {
+    background-color: #334155;
+}
+
+.progress-segment.filled {
+    background-color: #2e74ff;
+}

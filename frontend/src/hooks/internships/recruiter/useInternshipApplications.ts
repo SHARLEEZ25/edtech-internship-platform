@@ -1,0 +1,35 @@
+import { useState, useEffect, useCallback } from 'react';
+import { internshipsApi, type Application } from '@/api/internships.api';
+
+export const useInternshipApplications = (internshipId: string | undefined) => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [applications, setApplications] = useState<Application[]>([]);
+
+    const fetchApplications = useCallback(async () => {
+        if (!internshipId) return;
+
+        setLoading(true);
+        setError(null);
+        try {
+            const response = await internshipsApi.getInternshipApplications(internshipId);
+            setApplications(response.data.data);
+        } catch (err: any) {
+            setError(err.message || "Failed to fetch applications");
+        } finally {
+            setLoading(false);
+        }
+    }, [internshipId]);
+
+    useEffect(() => {
+        fetchApplications();
+    }, [fetchApplications]);
+
+    return {
+        loading,
+        error,
+        applications,
+        count: applications.length,
+        refetch: fetchApplications
+    };
+};

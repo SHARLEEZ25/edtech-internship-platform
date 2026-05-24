@@ -1,0 +1,493 @@
+/* Main Container */
+.student-details-container {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+    min-height: calc(100vh - 80px);
+    background: #f8fafc;
+}
+
+/* Header Section */
+.details-header-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: #4f46e5;
+}
+
+.header-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-title-section {
+    flex: 1;
+}
+
+.details-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.details-company-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.verified-badge {
+    /* background: #dcfce7; */
+    color: #16a34a;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.header-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #475569;
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-dot {
+    width: 4px;
+    height: 4px;
+    background: #cbd5e1;
+    border-radius: 50%;
+}
+
+.header-tags {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.header-tag {
+    padding: 0.375rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.tag-purple {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.tag-yellow {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.tag-blue {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.tag-red {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Main Grid Layout */
+.details-grid-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Left Column Content */
+.content-section-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.content-section-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+}
+
+.content-text {
+    line-height: 1.7;
+    color: #475569;
+    font-size: 0.9375rem;
+    white-space: pre-wrap;
+}
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.content-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.list-bullet {
+    min-width: 6px;
+    height: 6px;
+    margin-top: 0.6em;
+    background: #0f172a;
+    border-radius: 50%;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-badge {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+    display: inline-block;
+    line-height: 1.4;
+}
+
+.openings-count {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Right Sidebar */
+.sidebar-sticky {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.application-card,
+.company-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.sidebar-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.apply-btn-full {
+    width: 100%;
+    padding: 0.875rem;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.apply-btn-full:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.save-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #3b82f6;
+    background: transparent;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.save-btn:hover {
+    background: #eff6ff;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.save-btn.saved {
+    border-color: #10b981;
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.save-btn.saved:hover {
+    background: #d1fae5;
+}
+
+.withdraw-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #ef4444;
+    background: transparent;
+    color: #ef4444;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.withdraw-btn:hover {
+    background: #fef2f2;
+}
+
+.withdraw-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.company-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #64748b;
+}
+
+.company-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.company-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.visit-website-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #4f46e5;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.visit-website-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Similar Internships Section */
+.similar-internships-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.section-title-main {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
+
+.similar-internships-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.similar-internship-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.similar-internship-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.similar-internship-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.similar-company {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.similar-location {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+}
+
+.similar-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.similar-tag {
+    padding: 0.25rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.tag-remote {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.tag-6months {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.tag-parttime {
+    background: #fecaca;
+    color: #dc2626;
+}
+
+.tag-3months {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.tag-fulltime {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.tag-workcoffice {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .details-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-sticky {
+        position: static;
+    }
+
+    .header-main-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .similar-internships-grid {
+        grid-template-columns: 1fr;
+    }
+}

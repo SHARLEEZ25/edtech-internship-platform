@@ -1,0 +1,85 @@
+/* =========================
+  ROOT
+========================= */
+
+.auth-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+
+}
+
+/* =========================
+  MAIN LAYOUT (50 / 50)
+========================= */
+
+.auth-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+  LEFT : FORM
+========================= */
+
+.auth-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: #ffffff;
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* =========================
+  RIGHT : VISUAL
+========================= */
+
+.auth-visual-section {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background: #020617;
+  position: relative;
+
+}
+
+.auth-visual-section>* {
+  width: 100%;
+  height: 100%;
+}
+
+/* DEFAULT (LOGIN PAGE) */
+.auth-visual-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* login stays unchanged */
+  display: block;
+}
+
+/* SIGNUP PAGE ONLY */
+.signup-visual-image {
+  object-fit: contain;
+  /* full image visible */
+  object-position: center;
+}
+
+
+/* =========================
+  MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .auth-visual-section {
+    display: none;
+  }
+}

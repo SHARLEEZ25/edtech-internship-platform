@@ -1,0 +1,197 @@
+/* ===== VERIFY EMAIL STYLES ===== */
+
+.verify-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.verify-header {
+    margin-bottom: 32px;
+}
+
+.verify-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.verify-header p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.verify-header b {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* OTP Input Group */
+.otp-group {
+    margin-bottom: 24px;
+}
+
+.otp-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 12px;
+}
+
+.otp-input-field {
+    height: 56px;
+    width: 100%;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0 16px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    text-align: center;
+    background-color: #ffffff;
+    color: #0f172a;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.otp-input-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.otp-input-field::placeholder {
+    letter-spacing: normal;
+    font-size: 16px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.verify-btn {
+    height: 52px;
+    width: 100%;
+    background: linear-gradient(to right, #3b82f6, #4f46e5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+    transition: all 0.2s;
+    margin-bottom: 24px;
+}
+
+.verify-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
+}
+
+.verify-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.resend-section {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.resend-btn:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* ===== VISUAL SECTION ===== */
+
+.verify-visual-root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.verify-visual-wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+}
+
+.shield-badge {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    border-radius: 35% 65% 65% 35% / 30% 30% 70% 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: white;
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.3);
+    animation: floatRotate 6s ease-in-out infinite, morph 8s ease-in-out infinite;
+    z-index: 5;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 35% 65% 65% 35% / 30% 30% 70% 70%;
+    }
+
+    50% {
+        border-radius: 65% 35% 35% 65% / 70% 70% 30% 30%;
+    }
+
+    100% {
+        border-radius: 35% 65% 65% 35% / 30% 30% 70% 70%;
+    }
+}
+
+.verify-visual-text {
+    margin-top: 48px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    max-width: 320px;
+}
+
+/* Reusing some glow patterns from login/signup */
+.glow-emerald {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+    left: -50px;
+    top: -50px;
+    opacity: 0.3;
+}
+
+.glow-indigo {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #818cf8, #c084fc);
+    right: -60px;
+    bottom: -60px;
+    opacity: 0.35;
+}

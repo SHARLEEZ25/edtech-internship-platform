@@ -1,0 +1,604 @@
+/* Internship Details Page Styling - Matching Reference Design */
+
+.details-page-container {
+    padding: 2.5rem 2.5rem 8rem 2.5rem;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.details-page-header {
+    margin-bottom: 2rem;
+}
+
+.details-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.details-subtitle {
+    font-size: 1rem;
+    color: #9CA3AF;
+    margin: 0.5rem 0 0 0;
+    font-weight: 500;
+}
+
+/* 1. Main Detail Card (Header Section) */
+.details-main-card {
+    background: white;
+    border-radius: 1.5rem;
+    /* Large radius */
+    padding: 2.5rem;
+    /* Box shadow to match "lifted" feel but subtle */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid white;
+    /* Clean look */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Header Row */
+.detail-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detail-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-title-group h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1F2937;
+    margin: 0;
+}
+
+.detail-company-info {
+    font-size: 1rem;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-badge.active {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+/* Status Badge Dot */
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    /* Matches text color */
+}
+
+/* Attributes Grid */
+.detail-attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+    /* border-top: 1px solid #F3F4F6; Optional: Remove border if not in screenshot */
+}
+
+.attribute-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.attribute-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.attribute-value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #374151;
+    white-space: nowrap;
+}
+
+/* Icons */
+.material-symbols-outlined {
+    font-size: 1.25rem;
+}
+
+.icon-location {
+    color: #3B82F6;
+}
+
+/* Blue */
+.icon-type {
+    color: #A855F7;
+}
+
+/* Purple */
+.icon-domain {
+    color: #EC4899;
+}
+
+/* Pink */
+.icon-duration {
+    color: #F59E0B;
+}
+
+/* Orange */
+.icon-openings {
+    color: #10B981;
+}
+
+/* Green */
+.icon-stipend {
+    color: #16A34A;
+}
+
+/* Money Green */
+
+/* 2. Stats Grid */
+.details-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    /* border: 1px solid #F3F4F6; */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-metric-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-metric-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6B7280;
+}
+
+.stat-metric-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.stat-metric-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-bg-blue {
+    background-color: #EFF6FF;
+    color: #3B82F6;
+}
+
+.icon-bg-purple {
+    background-color: #FAF5FF;
+    color: #A855F7;
+}
+
+.icon-bg-orange {
+    background-color: #FFF7ED;
+    color: #F97316;
+}
+
+.icon-bg-green {
+    background-color: #F0FDF4;
+    color: #16A34A;
+}
+
+/* 3. Section Cards */
+.detail-section-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border: 1px solid white;
+    /* Adding white border to match potential highlight */
+}
+
+.details-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.details-section-header h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.section-icon-blue {
+    color: #3B82F6;
+}
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4B5563;
+}
+
+.description-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Bottom Grid Layout */
+.details-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 6rem;
+    /* Space for footer */
+}
+
+/* Skills Tags */
+.sub-header-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #D1D5DB;
+    /* Light gray label as in screenshot */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skills-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.skill-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    /* Slightly rounded rects in screenshot? Or pills? Screenshot looks like pills */
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Specific colors based on tech stack usually, but generalized here to match blue theme */
+.skill-tag {
+    background: #EFF6FF;
+    color: #3B82F6;
+}
+
+.skill-tag:nth-child(2) {
+    background: #E0F2FE;
+    color: #0EA5E9;
+}
+
+/* Tailwind cyan-ish */
+.skill-tag:nth-child(3) {
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+/* TS Blue */
+.skill-tag:nth-child(4) {
+    background: #FFF7ED;
+    color: #EA580C;
+}
+
+/* Git Orange */
+
+/* Responsibilities List */
+.responsibility-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.responsibility-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #9CA3AF;
+    background: #F3F4F6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.responsibility-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4B5563;
+}
+
+/* 5. Fixed Bottom Footer Actions - Premium Bar */
+.detail-footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 16rem;
+    /* Aligned with sidebar width */
+    right: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #f1f5f9;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    /* Centered as per request image */
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.detail-footer-actions {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: right;
+}
+
+.btn-detail {
+    height: 48px;
+    padding: 0 1.75rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    border: none;
+}
+
+.btn-text-mobile {
+    display: none;
+}
+
+.btn-text-desktop {
+    display: inline;
+}
+
+/* Close Internship - Red Border Styling */
+.btn-close-int {
+    background: white;
+    border: 1.5px solid #fee2e2;
+    color: #ef4444;
+}
+
+.btn-close-int .material-symbols-outlined {
+    color: #ef4444;
+}
+
+.btn-close-int:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+    transform: translateY(-2px);
+}
+
+/* View Applicants - Blue Border Styling */
+.btn-view-apps {
+    background: white;
+    border: 1.5px solid #dbeafe;
+    color: #2563eb;
+}
+
+.btn-view-apps .material-symbols-outlined {
+    color: #2563eb;
+}
+
+.btn-view-apps:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    transform: translateY(-2px);
+}
+
+/* Edit Internship - Primary Blue Styling */
+.btn-edit-int {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-edit-int .material-symbols-outlined {
+    color: white;
+}
+
+.btn-edit-int:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsive Handling */
+@media (max-width: 1200px) {
+    .detail-footer-wrapper {
+        left: 0;
+        /* Sidebar likely collapses or changes on smaller screens */
+    }
+}
+
+@media (max-width: 1280px) {
+    .detail-attributes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .details-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-footer-wrapper {
+        padding: 1rem;
+    }
+
+    .detail-footer-actions {
+        gap: 0.75rem;
+    }
+
+    .btn-detail {
+        padding: 0 1rem;
+        font-size: 0.85rem;
+        height: 42px;
+    }
+
+    .btn-detail span {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Container padding for mobile menu */
+    .details-page-container {
+        padding: 4.5rem 0.5rem 250px 0.5rem;
+    }
+
+    /* Header adjustments */
+    .detail-header-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .detail-title {
+        font-size: 1.75rem;
+    }
+
+    .detail-company {
+        font-size: 1rem;
+    }
+
+    .detail-badge {
+        font-size: 0.6875rem;
+        padding: 0.3rem 0.75rem;
+    }
+
+    /* Attributes grid */
+    .detail-attributes-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Stats grid */
+    .details-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Footer actions */
+    .detail-footer-wrapper {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        padding: 0.75rem;
+    }
+
+    .detail-footer-actions {
+        flex-direction: row;
+        width: 100%;
+        gap: 0.5rem;
+        max-width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-detail {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+        height: 48px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        gap: 0.35rem;
+    }
+
+    .btn-detail span.material-symbols-outlined {
+        font-size: 1.125rem;
+    }
+
+    .btn-text-desktop {
+        display: none;
+    }
+
+    .btn-text-mobile {
+        display: inline;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .details-page-container {
+        padding: 4.5rem 0.5rem 250px 0.5rem;
+    }
+
+    .detail-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-detail {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}

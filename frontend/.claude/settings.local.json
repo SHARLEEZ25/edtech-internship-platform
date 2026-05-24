@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/mnt/d/Vyntrix Innovation/\" | grep -i thozhil)",
+      "Read(//mnt/d/**)",
+      "Bash(find \"d:/Vyntrix Innovation\" -maxdepth 1 -type d -name \"*thozhil*\" -o -name \"*backend*\" 2>/dev/null)",
+      "Read(//d/Vyntrix Innovation/**)",
+      "Bash(ls -la \"C:/Users/DELL/Downloads/\" | grep -i thozhil)",
+      "Read(//c/Users/DELL/Downloads/**)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Vyntrix Innovation\\\\Thozhil-Backend-3\\\\src\\\\modules\\\\\" -Recurse -Filter \"*.routes.js\" | Select-Object FullName)",
+      "Bash(ls -R \"d:\\\\\\\\Vyntrix Innovation\\\\\\\\Thozhil-Backend-3\\\\\\\\src\\\\\\\\modules\\\\\\\\\")",
+      "Bash(find \"d:\\\\\\\\Vyntrix Innovation\\\\\\\\Thozhil-Backend-3\\\\\\\\src\\\\\\\\modules\" -name \"*routes.js\" -type f)"
+    ]
+  }
+}

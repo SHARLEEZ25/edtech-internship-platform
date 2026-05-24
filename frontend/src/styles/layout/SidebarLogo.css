@@ -1,0 +1,26 @@
+/* Centralized Branding Styles */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0.5rem 0rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-img {
+    width: 8rem;
+    height: auto;
+    max-height: 4.5rem;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+/* Specific adjustment for layouts that don't have base padding */
+.recruiter-sidebar .sidebar-logo {
+    padding-left: 2rem;
+}

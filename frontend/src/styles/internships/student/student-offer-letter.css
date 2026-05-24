@@ -1,0 +1,415 @@
+/* ================== Offer Letter Premium Redesign ================== */
+
+.offer-letter-modern-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.modern-offer-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.modern-offer-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    letter-spacing: -0.025em;
+}
+
+.modern-offer-title .check-icon {
+    color: #22c55e;
+    font-size: 2.25rem;
+}
+
+.modern-offer-subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Premium Card */
+.modern-offer-card {
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.05);
+    padding: 3.5rem;
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 3rem;
+}
+
+.modern-card-header {
+    margin-bottom: 3rem;
+}
+
+.company-branding {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.company-logo-box {
+    width: 64px;
+    height: 64px;
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+.company-logo-box .material-symbols-outlined {
+    font-size: 1.75rem;
+}
+
+.company-name-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.25rem 0;
+}
+
+.role-name-text {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Details Grid */
+.modern-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modern-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.modern-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: capitalize;
+}
+
+.modern-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Status Section */
+.modern-status-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.modern-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.modern-status-badge.selected {
+    background-color: #f0fdf4;
+    color: #22c55e;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+}
+
+/* Actions Section */
+.modern-offer-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.btn-primary-download {
+    background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.25rem 3rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+    min-width: 400px;
+}
+
+.btn-primary-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5);
+    background: linear-gradient(90deg, #4338ca 0%, #4f46e5 100%);
+}
+
+.secondary-links-row {
+    display: flex;
+    gap: 3rem;
+}
+
+.link-text-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.link-text-btn:hover {
+    color: #1e293b;
+}
+
+@media (max-width: 640px) {
+    .offer-letter-modern-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .modern-offer-header {
+        margin-bottom: 2rem;
+    }
+
+    .modern-offer-title {
+        font-size: 1.75rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .modern-offer-title .check-icon {
+        font-size: 2rem;
+    }
+
+    .modern-offer-subtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    .modern-offer-card {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .modern-card-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .company-branding {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .company-name-text {
+        font-size: 1.25rem;
+    }
+
+    .modern-details-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .modern-detail-item {
+        align-items: center;
+        text-align: center;
+        gap: 0.25rem;
+    }
+
+    .modern-status-section {
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .modern-offer-actions {
+        gap: 1.5rem;
+    }
+
+    .btn-primary-download {
+        min-width: unset;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .secondary-links-row {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .link-text-btn {
+        padding: 0.25rem;
+    }
+}
+
+/* ================== New Layout Classes ================== */
+
+.offer-page-layout {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* height: calc(100vh - 100px); Removed height constraint to allow content to flow naturally if needed, but flexrow implies sidebar height */
+    min-height: 80vh;
+}
+
+.offer-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* overflow-y: auto; */
+}
+
+.offer-list-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.offer-list-item {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    position: relative;
+}
+
+.offer-list-item:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.offer-list-item.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);
+}
+
+.offer-list-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.offer-list-item.active .offer-list-icon {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.offer-list-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.offer-list-company {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.25rem;
+}
+
+.offer-list-item.active .offer-list-company {
+    color: #1e3a8a;
+}
+
+.offer-list-role {
+    font-size: 0.875rem;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.offer-active-indicator {
+    color: #2563eb;
+    font-size: 1.25rem;
+}
+
+.offer-preview-pane {
+    flex: 1;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    /* overflow-y: auto; */
+    padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .offer-page-layout {
+        flex-direction: column;
+    }
+
+    .offer-sidebar {
+        width: 100%;
+    }
+}

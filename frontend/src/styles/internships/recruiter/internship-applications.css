@@ -1,0 +1,610 @@
+/* Internship Applications View Styling - High Fidelity Premium Design */
+
+.apps-page-container {
+    padding: 2.5rem;
+    background-color: #f8f9fc;
+    /* Light premium background */
+    min-height: 100vh;
+}
+
+.apps-page-header {
+    margin-bottom: 2rem;
+}
+
+.apps-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+}
+
+.apps-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Controls Bar */
+.apps-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.apps-search-pill {
+    position: relative;
+    flex: 1;
+    min-width: 350px;
+    max-width: none;
+}
+
+.search-icon-main {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.25rem;
+}
+
+.apps-search-field {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 3.5rem;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 9999px;
+    font-size: 0.9375rem;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.apps-search-field:focus {
+    outline: none;
+    border-color: #4285F4;
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.1);
+}
+
+.apps-filters-pills {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.control-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.pill-bold {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.dropdown-mini,
+.sort-mini {
+    font-size: 1.25rem;
+    color: #888;
+}
+
+.sort-pill {
+    border-color: #e0e0e0;
+}
+
+.control-pill:hover {
+    border-color: #ccc;
+    background-color: #fdfdfd;
+}
+
+/* Table Container */
+.apps-table-white-container {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+}
+
+.apps-modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.apps-modern-table th {
+    text-align: left;
+    padding: 1.25rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.apps-modern-table td {
+    padding: 1.5rem 2rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.apps-modern-table tr:hover td {
+    background-color: #fcfdfe;
+}
+
+/* Columns */
+.student-profile-cell {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.student-avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.student-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.student-name-text {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+.ai-badge-premium {
+    background: #f5f3ff;
+    color: #7c3aed;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #ede9fe;
+    white-space: nowrap;
+}
+
+.ai-spark {
+    font-size: 0.875rem;
+}
+
+.student-email-text {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+.applied-for-role {
+    font-size: 0.75rem;
+    color: #4285F4;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.college-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-name-text {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.college-degree-text,
+.date-sub-text {
+    font-size: 0.8125rem;
+    color: #999;
+}
+
+.applied-date-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-main-text {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Status Badges - Premium */
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
+
+.status-badge.shortlisted {
+    background-color: #ecfdf5;
+    color: #10b981;
+}
+
+.status-badge.under-review {
+    background-color: #fffbeb;
+    color: #f59e0b;
+}
+
+.status-badge.applied {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.status-badge.rejected {
+    background-color: #fef2f2;
+    color: #ef4444;
+}
+
+.status-badge.selected {
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.status-col-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.interview-note {
+    font-size: 0.75rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.dot-blue {
+    color: #4285F4;
+    font-size: 1rem;
+}
+
+/* Actions Row */
+.actions-row-modern {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-icon-grey {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-icon-grey:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+.btn-view-details-premium {
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    background: #4285F4;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 6px rgba(66, 133, 244, 0.15);
+}
+
+.btn-view-details-premium:hover {
+    background: #357ae8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(66, 133, 244, 0.3);
+}
+
+/* Footer Pagination */
+.apps-table-footer-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: #fafbfc;
+}
+
+.pagination-info {
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.pagination-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.pagination-circle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.pagination-circle-btn:hover {
+    background-color: #f5f5f5;
+    color: #111;
+    border-color: #ccc;
+}
+
+/* Loading State */
+.apps-loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 0;
+    gap: 1.5rem;
+}
+
+.loading-spinner {
+    font-size: 3rem;
+    color: #4285F4;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .apps-controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .apps-search-pill {
+        max-width: none;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .apps-search-field {
+        padding: 0.75rem 1rem 0.75rem 3rem;
+        font-size: 0.875rem;
+    }
+
+    .search-icon-main {
+        font-size: 1.1rem;
+        left: 1rem;
+    }
+
+    .apps-filters-pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .control-pill {
+        flex: 1;
+        min-width: 0;
+        /* Allow shrinking if needed */
+        justify-content: center;
+        white-space: nowrap;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .apps-page-container {
+        padding: 4.5rem 0.5rem 1.5rem 0.5rem;
+    }
+
+    .apps-page-header {
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .apps-title {
+        font-size: 1.5rem;
+    }
+
+    /* Table Container -> Card List */
+    .apps-table-white-container {
+        border-radius: 1rem;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        overflow: visible;
+    }
+
+    .apps-modern-table,
+    .apps-modern-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .apps-modern-table thead {
+        display: none;
+    }
+
+    .apps-modern-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        background: white;
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        border: 1px solid #f1f5f9;
+        margin-bottom: 1rem;
+    }
+
+    .apps-modern-table tr:hover td {
+        background: transparent;
+    }
+
+    .apps-modern-table td {
+        display: block;
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+
+    /* 1. Student Info - Top */
+    .apps-modern-table td:nth-child(1) {
+        order: 1;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .student-profile-cell {
+        width: 100%;
+    }
+
+    .student-info-col {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .student-name-text {
+        font-size: 1.1rem;
+    }
+
+    /* 2. College Info */
+    .apps-modern-table td:nth-child(2) {
+        order: 2;
+    }
+
+    .college-info-col {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .college-name-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .college-degree-text {
+        font-size: 0.85rem;
+        display: block;
+    }
+
+    /* 3. Status & Date - Split Row */
+    .apps-modern-table td:nth-child(3) {
+        order: 3;
+        display: none;
+        /* Hide date column separately, merge into status or show below */
+    }
+
+    /* Let's show date with status if possible, or just keep it simple */
+    /* Actually better to show Date in its own row or with Status */
+
+    .apps-modern-table td:nth-child(4) {
+        order: 3;
+        /* Status comes after College */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f8fafc;
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .status-col-modern {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 5. Actions - Bottom */
+    .apps-modern-table td:nth-child(5) {
+        order: 5;
+        margin-top: 0.25rem;
+    }
+
+    .actions-row-modern {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .btn-view-details-premium {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .btn-icon-grey {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    /* Footer */
+    .apps-table-footer-modern {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #f1f5f9;
+    }
+}

@@ -1,0 +1,220 @@
+/* Student Past Interviews Page Styling */
+
+.past-interviews-container {
+    padding: 2.5rem;
+    /* max-width: 1000px; */
+}
+
+.hist-page-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 2rem 0;
+    letter-spacing: -0.025em;
+}
+
+/* Filters Bar */
+.hist-filters-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hist-search-wrapper {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.hist-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.25rem;
+}
+
+.hist-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #334155;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+.hist-search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hist-filters-right {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.hist-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    /* Pill */
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hist-filter-btn span {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.hist-filter-btn:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.icon-xs {
+    font-size: 1.125rem;
+    color: #94a3b8;
+}
+
+/* List */
+.hist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hist-card {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+/* .hist-card:hover { transform: translateY(-2px); } */
+
+.hist-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hist-role {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.hist-company {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0 0 0.5rem 0;
+}
+
+.hist-date-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Badges */
+.hist-badge {
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    /* Slightly rounded rect, or pill? Screenshot looks pill-ish but slightly wider. Standard badge. */
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-right: 1.5rem;
+    /* Space before button */
+    white-space: nowrap;
+}
+
+.hist-badge.selected {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.hist-badge.rejected {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.hist-badge.pending {
+    background-color: #fef9c3;
+    color: #ca8a04;
+}
+
+.hist-badge.awaiting {
+    background-color: #dbeafe;
+    color: #2563eb;
+    /* Screenshot says "Awaiting Evaluation" in blue pill */
+}
+
+.hist-badge.noshow {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+/* Actions */
+.hist-actions-col {
+    display: flex;
+    align-items: center;
+}
+
+.hist-btn-details {
+    padding: 0.5rem 1rem;
+    background-color: #eff6ff;
+    color: #3b82f6;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hist-btn-details:hover {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+@media (max-width: 640px) {
+    .hist-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hist-actions-col {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hist-badge {
+        margin-right: 0;
+    }
+}

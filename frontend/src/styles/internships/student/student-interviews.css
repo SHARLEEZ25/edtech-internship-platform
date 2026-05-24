@@ -1,0 +1,666 @@
+/* Student Interviews Page */
+
+.interviews-container {
+    padding: 1.5rem 0.5rem;
+}
+
+.interviews-header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.page-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.025em;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #6B7280;
+    margin: 0;
+    font-weight: 500;
+}
+
+.btn-history {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-history:hover {
+    background-color: #F9FAFB;
+    border-color: #D1D5DB;
+    transform: translateY(-1px);
+}
+
+/* Notification Banner */
+.interview-notification-banner {
+    background: linear-gradient(90deg, #4F46E5 0%, #A855F7 100%);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    /* Pill shape exactly like design */
+    color: white;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Filters */
+.interviews-filters-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.filter-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4B5563;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-chip span:first-of-type {
+    font-weight: 700;
+    color: #111827;
+}
+
+.filter-chip:hover {
+    background-color: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.icon-sm {
+    font-size: 1.1rem !important;
+    color: #9CA3AF;
+}
+
+/* Grid */
+.interviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1100px) {
+    .interviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .interviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.interview-card {
+    background: white;
+    border-radius: 1.5rem;
+    border: 1px solid #F3F4F6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.interview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.role-company {
+    flex: 1;
+}
+
+.role-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.375rem 0;
+    line-height: 1.3;
+}
+
+.company-name {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Badges */
+.interview-badge {
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.interview-badge.scheduled {
+    background-color: #E0E7FF;
+    color: #4338CA;
+}
+
+.interview-badge.completed {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.interview-badge.cancelled {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+}
+
+/* Card Body Info */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #F3F4F6;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4B5563;
+    font-size: 0.875rem;
+    font-weight: 510;
+}
+
+.info-icon {
+    color: #111827;
+    font-size: 1.25rem;
+}
+
+/* Card Footer Buttons */
+.card-footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.btn-join {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.35);
+}
+
+.btn-join .material-symbols-outlined {
+    font-size: 1.25rem;
+}
+
+.btn-join:hover {
+    background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+    box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-details {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    color: #374151;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn-details:hover {
+    border-color: #D1D5DB;
+    background-color: #F9FAFB;
+}
+
+.btn-details.full-width {
+    flex: 1;
+    width: 100%;
+}
+
+/* Empty State */
+.interviews-empty-state {
+    border: 2px dashed #bfc1c7;
+    border-radius: 1.5rem;
+    padding: 4rem 2rem;
+    background-color: #f4f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.empty-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 480px;
+}
+
+.empty-illustration {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-illustration img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.interviews-empty-state h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.75rem 0;
+}
+
+.interviews-empty-state p {
+    color: #6B7280;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.btn-browse-internships {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 2rem;
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-browse-internships:hover {
+    background-color: #2563EB;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .interviews-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .interviews-filters-bar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+/* ================== Exact Interview Details Match ================== */
+
+.interview-exact-details-container {
+    /* max-width: 900px; */
+    padding: 2.5rem 1rem;
+}
+
+.exact-header-section {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.exact-page-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.exact-page-subtitle {
+    font-size: 1rem;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.exact-detail-card {
+    background: white;
+    border-radius: 2rem;
+    border: 1px solid #F3F4F6;
+    padding: 3rem;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.03);
+}
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.exact-company-name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+}
+
+.exact-role-name {
+    font-size: 1.125rem;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+.card-status-badge {
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-status-badge.scheduled {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+/* Info Grid */
+.exact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.exact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.exact-info-item.full-width {
+    grid-column: span 2;
+}
+
+.exact-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: #EFF6FF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563EB;
+}
+
+.exact-icon-box .material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+.exact-info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.link-with-copy {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.meeting-link-text {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.meeting-link-text:hover {
+    text-decoration: underline;
+}
+
+.copy-icon-small {
+    font-size: 1rem !important;
+    color: #94A3B8;
+    cursor: pointer;
+}
+
+.horizontal-divider {
+    height: 1px;
+    background-color: #F1F5F9;
+    margin-bottom: 2.5rem;
+}
+
+/* Instructions */
+.exact-instructions-section {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.exact-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.exact-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.exact-check-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4B5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.check-bullet {
+    color: #22C55E;
+    font-size: 1.25rem !important;
+}
+
+/* Actions */
+.exact-actions-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-join-now {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-join-now:hover {
+    background-color: #2563EB;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.btn-add-calendar {
+    background-color: white;
+    color: #374151;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-add-calendar:hover {
+    background-color: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+@media (max-width: 640px) {
+    .exact-detail-card {
+        padding: 1.5rem;
+    }
+
+    .exact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .exact-info-item.full-width {
+        grid-column: span 1;
+    }
+
+    .exact-actions-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn-join-now,
+    .btn-add-calendar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card-top-row {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .company-info {
+        width: 100%;
+    }
+
+    .card-status-badge {
+        align-self: flex-start;
+    }
+
+    .exact-company-name {
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .exact-info-content {
+        min-width: 0;
+        /* Enable truncation in flex child */
+    }
+
+    .meeting-link-text {
+        white-space: normal;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 640px) {
+    .interview-premium-card {
+        padding: 3rem 1.5rem;
+    }
+
+    .detail-role-title {
+        font-size: 1.75rem;
+    }
+
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .detail-main-actions {
+        flex-direction: column;
+    }
+
+    .status-badge-container {
+        position: static;
+        margin-bottom: 1.5rem;
+    }
+}

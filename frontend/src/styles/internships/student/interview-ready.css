@@ -1,0 +1,141 @@
+/* Interview Ready Page Styling */
+
+.interview-ready-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f1f5f9;
+    /* Light gray background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    padding: 2rem;
+}
+
+.ready-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Header */
+.ready-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.ready-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.025em;
+}
+
+.ready-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    /* Blue-ish gray text */
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Card */
+.ready-card {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    padding: 2.5rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.ready-info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ready-info-item {
+    display: flex;
+    gap: 1.25rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ready-info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.ready-icon {
+    font-size: 1.5rem;
+    color: #64748b;
+    margin-top: 0.125rem;
+    /* Optical alignment */
+}
+
+.ready-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.ready-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.ready-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Actions */
+.ready-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.btn-join-now {
+    background: linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%);
+    /* Blue gradient */
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 250px;
+}
+
+.btn-join-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -5px rgba(59, 130, 246, 0.4);
+}
+
+.link-test-mic {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s;
+}
+
+.link-test-mic:hover {
+    color: #3b82f6;
+}

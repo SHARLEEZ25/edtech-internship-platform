@@ -1,0 +1,454 @@
+/* Recruiter Onboarding - Identity Step Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.rec-root {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e0f2fe 100%);
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+.fixed-bg {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ecfeff 100%);
+    z-index: -10;
+    pointer-events: none;
+}
+
+/* Header */
+.rec-header-nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+}
+
+.login-prompt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.login-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: #2563eb;
+}
+
+/* Main Layout */
+.rec-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Floating Decorative Dots */
+.floating-dot {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.dot-yellow {
+    width: 14px;
+    height: 14px;
+    background: #fbbf24;
+    top: 15%;
+    right: 35%;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.dot-blue {
+    width: 16px;
+    height: 16px;
+    background: #60a5fa;
+    bottom: 12%;
+    left: 28%;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+}
+
+/* Floating Cards */
+.floating-card {
+    position: absolute;
+    z-index: 5;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .floating-card {
+        display: block;
+    }
+}
+
+.floating-card-inner {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1),
+        0 8px 16px -8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-card-inner:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-card-inner.purple-theme {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #e9d5ff;
+}
+
+.floating-card-inner.purple-theme .material-symbols-outlined {
+    color: #a855f7;
+    font-size: 28px;
+}
+
+.floating-card-inner.blue-theme {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1px solid #bfdbfe;
+    border-radius: 50%;
+}
+
+.floating-card-inner.blue-theme .material-symbols-outlined {
+    color: #3b82f6;
+    font-size: 24px;
+}
+
+.floating-left {
+    left: 8%;
+    top: 45%;
+    transform: rotate(-8deg);
+}
+
+.floating-right {
+    right: 10%;
+    top: 55%;
+    transform: rotate(6deg);
+}
+
+/* Main Card */
+.rec-card {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.08),
+        0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.rec-card-header {
+    padding: 2rem 2rem 1rem;
+}
+
+/* Progress Section */
+.progress-section {
+    margin-bottom: 2rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.step-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #334155;
+}
+
+.step-label {
+    color: #3b82f6;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.progress-bar-track {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 100px;
+    transition: width 0.4s ease;
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.title-section h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.title-section p {
+    color: #64748b;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+/* Form Body */
+.rec-form-body {
+    padding: 1rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Input Block */
+.input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-block label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-left: 0.125rem;
+}
+
+.relative-field {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 20px;
+    transition: color 0.2s;
+}
+
+.input-block:focus-within .field-icon {
+    color: #3b82f6;
+}
+
+.rec-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 1rem 0 3rem;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.rec-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.rec-input:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Footer */
+.rec-card-footer {
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #f1f5f9;
+}
+
+.back-action {
+    color: #64748b;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.back-action:hover {
+    color: #334155;
+}
+
+.submit-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 48px;
+    padding: 0 1.75rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.4);
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.submit-action:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 12px 24px -4px rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+}
+
+.submit-action:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.submit-action:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-icon {
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.submit-action:hover:not(:disabled) .btn-icon {
+    transform: translateX(3px);
+}
+
+/* Error Message */
+.error-message {
+    color: #dc2626;
+    background-color: #fef2f2;
+    padding: 0.875rem 1rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #fecaca;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .rec-header-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .login-prompt {
+        display: none;
+    }
+
+    .rec-main {
+        padding: 1rem;
+    }
+
+    .rec-card {
+        border-radius: 16px;
+    }
+
+    .rec-card-header {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .rec-form-body {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+
+    .rec-card-footer {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .title-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .floating-dot {
+        display: none;
+    }
+}
+
+/* Animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-8deg);
+    }
+}
+
+@keyframes floatReverse {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(6deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(6deg);
+    }
+}
+
+.floating-left {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-right {
+    animation: floatReverse 5s ease-in-out infinite;
+}

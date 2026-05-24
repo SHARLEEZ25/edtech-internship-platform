@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "UX/UI Design Intern",
+        "company": "DesignStudio",
+        "location": "Bengaluru, India",
+        "tags": [
+            {
+                "label": "Remote",
+                "className": "tag-remote"
+            },
+            {
+                "label": "6 Months",
+                "className": "tag-6months"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Graphic Design Intern",
+        "company": "Creative Pixels",
+        "location": "Mumbai, India",
+        "tags": [
+            {
+                "label": "Part-time",
+                "className": "tag-parttime"
+            },
+            {
+                "label": "3 Months",
+                "className": "tag-3months"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Product Analyst Intern",
+        "company": "DataFlow Inc",
+        "location": "Pune, India",
+        "tags": [
+            {
+                "label": "Full-time",
+                "className": "tag-fulltime"
+            },
+            {
+                "label": "Work-from-Office",
+                "className": "tag-workcoffice"
+            }
+        ]
+    }
+]

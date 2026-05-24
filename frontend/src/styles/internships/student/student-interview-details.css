@@ -1,0 +1,295 @@
+/* Student Interview Details Page Styling */
+
+.interview-details-container {
+    padding: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.details-header-section {
+    margin-bottom: 2rem;
+}
+
+.details-page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.025em;
+}
+
+.details-page-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Main Card */
+.interview-details-card {
+    background: white;
+    border-radius: 1.5rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header */
+.id-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.id-company-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.25rem 0;
+}
+
+.id-role-name {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+}
+
+.id-status-badge {
+    padding: 0.375rem 0.75rem;
+    background-color: #dcfce7;
+    color: #16a34a;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Info Grid */
+.id-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.id-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.id-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Icon Colors */
+.bg-blue-100 {
+    background-color: #dbeafe;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+}
+
+.bg-purple-100 {
+    background-color: #f3e8ff;
+}
+
+.text-purple-600 {
+    color: #9333ea;
+}
+
+.bg-indigo-100 {
+    background-color: #e0e7ff;
+}
+
+.text-indigo-600 {
+    color: #4f46e5;
+}
+
+.bg-orange-100 {
+    background-color: #ffedd5;
+}
+
+.text-orange-600 {
+    color: #ea580c;
+}
+
+.bg-sky-100 {
+    background-color: #e0f2fe;
+}
+
+.text-sky-600 {
+    color: #0284c7;
+}
+
+.id-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.id-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.id-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+.id-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.id-link-text {
+    font-size: 0.9rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    /* Truncate long link */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.id-link-text:hover {
+    text-decoration: underline;
+}
+
+.id-copy-icon {
+    font-size: 1rem;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.id-copy-icon:hover {
+    color: #1e293b;
+}
+
+/* Instructions */
+.id-divider {
+    height: 1px;
+    background-color: #f1f5f9;
+    margin: 0 0 2rem 0;
+}
+
+.id-instructions-section {
+    margin-bottom: 2.5rem;
+}
+
+.id-section-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+}
+
+.id-instructions-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.id-instruction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.id-check-icon {
+    color: #22c55e;
+    /* Green check */
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.id-instruction-text {
+    line-height: 1.5;
+}
+
+/* Actions */
+.id-actions-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.id-btn-join {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    /* Pill */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.id-btn-join:hover {
+    background-color: #2563eb;
+}
+
+.id-btn-calendar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.id-btn-calendar:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+@media (max-width: 640px) {
+    .id-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .id-actions-row {
+        flex-direction: column;
+    }
+}

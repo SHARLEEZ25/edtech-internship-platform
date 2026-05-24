@@ -1,0 +1,476 @@
+/* Main Container */
+.app-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Breadcrumb */
+.app-breadcrumb {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-link-light {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-link-light:hover {
+    color: #0f172a;
+}
+
+.breadcrumb-separator {
+    margin: 0 8px;
+    color: #cbd5e1;
+}
+
+.app-breadcrumb-current {
+    color: #0f172a;
+    font-weight: 500;
+}
+
+/* Back Link */
+.app-back-link-wrapper {
+    margin-bottom: 24px;
+}
+
+.btn-back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.btn-back-link:hover {
+    color: #2563eb;
+}
+
+/* Main Card */
+.app-details-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e2e8f0;
+}
+
+/* Top Section */
+.app-card-top {
+    padding: 64px 32px 40px;
+    /* Increased top padding to clear the header row */
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.app-card-header-row {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Action Toggle */
+.action-toggle-container {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.toggle-option {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-option:hover {
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.toggle-option.active {
+    background: white;
+    color: #2563eb;
+    /* Primary Blue */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+
+/* Status Badges */
+.status-badge-pending,
+.status-badge-applied {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge-shortlisted {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-badge-rejected {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.status-badge-withdrawn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.status-badge-interview,
+.status-badge-under-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.status-badge-selected,
+.status-badge-hired {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #dcfce7;
+    /* Green-100 */
+    color: #15803d;
+    /* Green-700 */
+    border: 1px solid #bbf7d0;
+}
+
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.app-avatar-wrapper {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    padding: 4px;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.app-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.app-candidate-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.app-candidate-role {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3b82f6;
+    margin-bottom: 16px;
+}
+
+.app-meta-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-separator {
+    color: #cbd5e1;
+}
+
+/* Middle Section */
+.app-card-middle {
+    padding: 32px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.skill-tag {
+    padding: 6px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resume-link:hover {
+    text-decoration: underline;
+}
+
+/* Bottom Section */
+.app-card-bottom {
+    padding: 32px;
+    background: #f8fafc;
+}
+
+.action-buttons-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    justify-content: center;
+    /* Center the buttons */
+}
+
+
+
+/* Dynamic Button Styles */
+.btn-action-dynamic {
+    flex: 1;
+    /* Stretch to fill */
+    max-width: 400px;
+    /* But not too wide */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #3b82f6;
+    /* Default Blue */
+    color: white;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.btn-action-dynamic:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.btn-action-dynamic.shortlisted {
+    background: #22c55e;
+    /* Green */
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+}
+
+.btn-action-dynamic.shortlisted:hover {
+    background: #16a34a;
+}
+
+.btn-action-dynamic.interview {
+    background: #6366f1;
+    /* Indigo */
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+.btn-action-dynamic.interview:hover {
+    background: #4f46e5;
+}
+
+.btn-action-dynamic.selected {
+    background: #10b981;
+    /* Emerald */
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.btn-action-dynamic.selected:hover {
+    background: #059669;
+}
+
+.btn-action-dynamic.rejected {
+    background: #ef4444;
+    /* Red */
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.btn-action-dynamic.rejected:hover {
+    background: #dc2626;
+}
+
+.btn-action-dynamic:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* Remarks */
+.remarks-section {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.remarks-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.remarks-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.saving-text {
+    font-size: 12px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+.remarks-textarea {
+    width: 100%;
+    min-height: 80px;
+    border: none;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    color: #334155;
+    outline: none;
+}
+
+.remarks-textarea::placeholder {
+    color: #94a3b8;
+}
+
+.char-count {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.disclaimer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 16px;
+}

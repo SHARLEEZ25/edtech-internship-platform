@@ -1,0 +1,418 @@
+/* Recruiter Onboarding - Company Online Presence Step Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.presence-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+}
+
+.fixed-bg-presence {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e0f2fe 100%);
+  z-index: -10;
+  pointer-events: none;
+}
+
+/* Main Layout */
+.presence-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+/* Floating Dots */
+.floating-dot-presence {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.dot-yellow-presence {
+  width: 14px;
+  height: 14px;
+  background: #fbbf24;
+  top: 30%;
+  right: 15%;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.dot-blue-presence {
+  width: 16px;
+  height: 16px;
+  background: #60a5fa;
+  bottom: 25%;
+  left: 12%;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+}
+
+/* Floating Cards */
+.floating-card-presence {
+  position: absolute;
+  z-index: 5;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .floating-card-presence {
+    display: block;
+  }
+}
+
+.floating-card-inner-presence {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1),
+    0 8px 16px -8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-card-inner-presence:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.floating-card-inner-presence.teal-theme {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  border: none;
+}
+
+.floating-card-inner-presence.teal-theme .material-symbols-outlined {
+  color: white;
+  font-size: 32px;
+}
+
+.floating-card-inner-presence.purple-theme-presence {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border: none;
+  border-radius: 16px;
+}
+
+.floating-card-inner-presence.purple-theme-presence .material-symbols-outlined {
+  color: white;
+  font-size: 26px;
+}
+
+.floating-top-left-presence {
+  left: 12%;
+  top: 18%;
+  animation: floatPresence 6s ease-in-out infinite;
+}
+
+.floating-bottom-right-presence {
+  right: 10%;
+  bottom: 28%;
+  animation: floatPresenceReverse 5s ease-in-out infinite;
+}
+
+/* Container */
+.presence-container {
+  width: 100%;
+  max-width: 520px;
+  z-index: 10;
+}
+
+/* Segmented Progress Bar */
+.progress-header-presence {
+  margin-bottom: 1.5rem;
+}
+
+.progress-top-row-presence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.step-count-presence {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3b82f6;
+}
+
+.progress-percent-presence {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.progress-segments-presence {
+  display: flex;
+  gap: 8px;
+}
+
+.progress-segment-presence {
+  flex: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 100px;
+  transition: background 0.3s ease;
+}
+
+.progress-segment-presence.filled {
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Main Card */
+.presence-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.08),
+    0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  overflow: hidden;
+}
+
+/* Card Top - Title */
+.card-top-presence {
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: left;
+}
+
+.card-top-presence h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.card-top-presence p {
+  color: #64748b;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+/* Form */
+.presence-form {
+  padding: 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Field Group */
+.field-group-presence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.field-label-presence {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.optional-tag {
+  font-weight: 400;
+  color: #94a3b8;
+  font-size: 0.8125rem;
+}
+
+.field-relative-presence {
+  position: relative;
+}
+
+.field-icon-presence {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+.field-group-presence:focus-within .field-icon-presence {
+  color: #3b82f6;
+}
+
+.presence-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 1rem 0 3rem;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.presence-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.presence-input:focus {
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Footer */
+.presence-footer {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.back-action-presence {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.5rem 0.75rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.back-action-presence:hover {
+  color: #334155;
+}
+
+.back-action-presence .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.next-btn-presence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 48px;
+  padding: 0 1.75rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.next-btn-presence:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 12px 24px -4px rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+}
+
+.next-btn-presence:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.next-btn-presence .material-symbols-outlined {
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.next-btn-presence:hover:not(:disabled) .material-symbols-outlined {
+  transform: translateX(3px);
+}
+
+/* Error Message */
+.error-message-presence {
+  color: #dc2626;
+  background-color: #fef2f2;
+  padding: 0.875rem 1rem;
+  margin: 0 2rem 1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #fecaca;
+}
+
+/* Animations */
+@keyframes floatPresence {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(-4deg);
+  }
+}
+
+@keyframes floatPresenceReverse {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .presence-main {
+    padding: 1rem;
+  }
+
+  .presence-card {
+    border-radius: 16px;
+  }
+
+  .card-top-presence {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .card-top-presence h1 {
+    font-size: 1.375rem;
+  }
+
+  .presence-form {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .presence-footer {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .floating-dot-presence {
+    display: none;
+  }
+}
