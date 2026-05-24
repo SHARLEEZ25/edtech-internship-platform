@@ -1,0 +1,509 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// =====================================
+// Prisma Client
+// =====================================
+generator client {
+  provider = "prisma-client-js"
+}
+
+// =====================================
+// Database Source
+// =====================================
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// =====================================
+// ENUMS
+// =====================================
+enum Role {
+  STUDENT
+  RECRUITER
+  ADMIN
+}
+
+enum AuthProvider {
+  EMAIL
+  GOOGLE
+}
+
+enum OtpPurpose {
+  EMAIL_VERIFICATION
+  PASSWORD_RESET
+}
+
+enum OnboardingStep {
+  ROLE_SELECTION
+  
+  // Recruiter
+  RECRUITER_PROFESSIONAL
+  RECRUITER_COMPANY
+  RECRUITER_DESCRIPTION
+
+  // Student
+  STUDENT_EDUCATION
+  STUDENT_SKILLS
+  STUDENT_LOCATION
+
+  COMPLETED
+}
+
+enum AchievementCategory {
+  PREMIUM   // Premium / Certificate
+  VERIFIED  // Verified / Badge
+  AWARD     // Award / Trophy
+  STAR      // Star / Recognition
+}
+
+enum InternshipType {
+  REMOTE
+  ONSITE
+  HYBRID
+}
+
+enum WorkType {
+  FULL_TIME
+  PART_TIME
+}
+
+enum InternshipStatus {
+  DRAFT
+  LIVE
+  CLOSED
+}
+
+enum ApplicationStatus {
+  APPLIED
+  UNDER_REVIEW
+  SHORTLISTED
+  INTERVIEW
+  REJECTED
+  SELECTED
+  WITHDRAWN
+}
+
+enum EngagementStatus {
+  UPCOMING
+  COMPLETED
+}
+
+// =====================================
+// CORE USER
+// =====================================
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  fullName        String?
+  passwordHash    String?
+  role            Role?
+  onboardingStep  OnboardingStep @default(ROLE_SELECTION)
+  isOnboarded     Boolean  @default(false)
+  isActive        Boolean  @default(true)
+  emailVerifiedAt DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  studentProfile   StudentProfile?
+  recruiterProfile RecruiterProfile?
+  refreshTokens    RefreshToken[]
+  oauthAccounts    OAuthAccount[]
+  otps             Otp[]
+  
+  // Interview Relations
+  interviewsAsRecruiter Interview[] @relation("RecruiterInterviews")
+  interviewsAsStudent   Interview[] @relation("StudentInterviews")
+}
+
+// =====================================
+// OTP
+// =====================================
+model Otp {
+  id        String     @id @default(cuid())
+  userId    String
+  purpose   OtpPurpose
+  codeHash  String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+}
+
+// =====================================
+// REFRESH TOKENS
+// =====================================
+model RefreshToken {
+  id          String   @id @default(cuid())
+  tokenHash   String   @unique
+  userId      String
+  revokedAt   DateTime?
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// =====================================
+// STUDENT PROFILE
+// =====================================
+model StudentProfile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+
+  // Education
+  collegeName    String?
+  degree         String?
+  graduationYear Int?
+  specialization String?
+
+  // Profile
+  headline       String? // e.g. "Full Stack Developer"
+  about          String? // Bio
+
+  // Location
+  city           String?
+  state          String?
+
+  // Social & Personal
+  profilePictureUrl String?
+  linkedinUrl       String?
+  githubUrl         String?
+  portfolioUrl      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skills StudentSkill[]
+  experiences StudentExperience[]
+  achievements StudentAchievement[]
+  engagements StudentEngagement[]
+  applications InternshipApplication[]
+  savedInternships SavedInternship[]
+}
+
+// =====================================
+// STUDENT EXPERIENCE
+// =====================================
+model StudentExperience {
+  id          String   @id @default(cuid())
+  studentId   String
+  title       String   // e.g. Frontend Intern
+  company     String   // e.g. Google
+  
+  startMonth  String   // e.g. "January"
+  startYear   Int      // e.g. 2023
+  endMonth    String?  // Null = Present
+  endYear     Int?     // Null = Present
+
+  description String?  // @db.Text
+  createdAt   DateTime @default(now())
+
+  student     StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@index([studentId])
+}
+
+// =====================================
+// STUDENT ACHIEVEMENTS
+// =====================================
+model StudentAchievement {
+  id          String   @id @default(cuid())
+  studentId   String
+  title       String   // Achievement Title
+  issuer      String   // Issuer / Details
+  category    AchievementCategory // Category Icon
+  createdAt   DateTime @default(now())
+
+  student     StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@index([studentId])
+}
+
+// =====================================
+// STUDENT ENGAGEMENTS
+// =====================================
+model StudentEngagement {
+  id          String   @id @default(cuid())
+  studentId   String
+  title       String   // e.g. Advanced React Workshop
+  detail      String?  // e.g. 12 hours training
+  tag         String   // e.g. WORKSHOP, CERTIFIED
+  icon        String   // e.g. Education, Code
+  createdAt   DateTime @default(now())
+
+  student     StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@index([studentId])
+}
+
+// =====================================
+// STUDENT SKILLS
+// =====================================
+model StudentSkill {
+  id        String   @id @default(cuid())
+  name      String
+  studentId String
+  createdAt DateTime @default(now())
+
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([studentId])
+}
+
+// =====================================
+// RECRUITER PROFILE
+// =====================================
+model RecruiterProfile {
+  id String @id @default(cuid())
+  userId String @unique
+
+  professionalTitle String?
+
+  companyName String?
+  companyWebsite String?
+  companyDescription String?
+
+  // Social & Additional Info
+  hiringRoles String[] @default([])
+  linkedinUrl String?
+  twitterUrl  String?
+
+  city  String?
+  state String?
+
+  // Hiring Experience Stats
+  studentsHired  Int @default(0)
+  activePostings Int @default(0)
+  retentionRate  Int @default(0)
+  yearsOfExperience Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  internships Internship[]
+  
+  achievements RecruiterAchievement[]
+  engagements  RecruiterEngagement[]
+}
+
+model RecruiterAchievement {
+  id          String   @id @default(cuid())
+  label       String
+  icon        String
+  colorClass  String
+  recruiterId String
+  recruiter   RecruiterProfile @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+}
+
+model RecruiterEngagement {
+  id          String   @id @default(cuid())
+  title       String
+  subtitle    String
+  status      EngagementStatus @default(UPCOMING)
+  icon        String
+  recruiterId String
+  recruiter   RecruiterProfile @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+}
+
+// =====================================
+// OAUTH ACCOUNTS
+// =====================================
+model OAuthAccount {
+  id             String       @id @default(cuid())
+  userId         String
+  provider       AuthProvider
+  providerUserId String
+  accessToken    String?
+  refreshToken   String?
+  createdAt      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerUserId])
+  @@index([userId])
+}
+
+// =====================================
+// INTERNSHIP MODULE
+// =====================================
+
+model Internship {
+  id String @id @default(cuid())
+
+  // Ownership
+  recruiterId String
+  recruiter RecruiterProfile @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
+
+  // Core info
+  title String
+  description String
+  domain String // Tech, Design, Marketing (can be enum later)
+  internshipType InternshipType
+  workType WorkType @default(FULL_TIME)
+  status InternshipStatus @default(DRAFT)
+
+  // Location
+  city String?
+  state String?
+
+  // Compensation
+  stipendMin Int?
+  stipendMax Int?
+  stipendCurrency String @default("INR")
+  stipendPeriod String @default("MONTH") // MONTH / HOUR
+
+  // Duration
+  durationValue Int
+  durationUnit String // MONTHS / WEEKS
+
+  // Logistics
+  openings Int
+  skills String[]
+  requirements String[]
+  responsibilities String[]
+  applicationDeadline DateTime
+  deletedAt           DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  // Relations
+  applications InternshipApplication[]
+  savedByUsers SavedInternship[]
+
+  @@index([recruiterId])
+  @@index([status])
+  @@index([domain])
+  @@index([deletedAt])
+}
+
+model InternshipApplication {
+  id String @id @default(cuid())
+
+  internshipId String
+  studentId String
+
+  // Snapshot of student data at time of applying
+  fullName String
+  email String
+  phone String?
+
+  resumeUrl String?
+  coverLetter String?
+
+  portfolioUrl String?
+  githubUrl String?
+  linkedinUrl String?
+
+  status ApplicationStatus @default(APPLIED)
+
+  remarks String?
+
+  appliedAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  withdrawnAt DateTime?
+
+  // Relations
+  internship Internship @relation(fields: [internshipId], references: [id], onDelete: Cascade)
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  statusHistory ApplicationStatusHistory[]
+  remarkHistory ApplicationRemark[]
+  interviews    Interview[]
+
+  @@unique([internshipId, studentId]) // apply once
+  @@index([internshipId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model SavedInternship {
+  id        String   @id @default(cuid())
+  studentId String
+  internshipId String
+  createdAt DateTime @default(now())
+
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  internship Internship @relation(fields: [internshipId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, internshipId])
+  @@index([studentId])
+}
+
+model ApplicationStatusHistory {
+  id String @id @default(cuid())
+
+  applicationId String
+  fromStatus ApplicationStatus?
+  toStatus ApplicationStatus
+  changedBy String // recruiter userId or system
+  createdAt DateTime @default(now())
+
+  application InternshipApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId])
+}
+
+model ApplicationRemark {
+  id            String   @id @default(cuid())
+  applicationId String
+  content       String
+  authorId      String   // recruiter userId
+  createdAt     DateTime @default(now())
+
+  application InternshipApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId])
+}
+
+// =====================================
+// INTERVIEWS
+// =====================================
+enum InterviewStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  RESCHEDULED
+}
+
+model Interview {
+  id String @id @default(cuid())
+
+  applicationId String
+  
+  // Denormalized for easier querying
+  recruiterId String
+  studentId   String
+
+  // Schedule
+  date        DateTime // Stores UTC date and time
+  duration    Int      @default(30) // in minutes
+  
+  // Details
+  mode        String   @default("Google Meet") // e.g. "Google Meet", "Zoom", "In-Office"
+  link        String   // Meeting URL or Physical Address
+  notes       String?  // Instructions for the student
+  
+  status      InterviewStatus @default(SCHEDULED)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  application InternshipApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  recruiter   User     @relation("RecruiterInterviews", fields: [recruiterId], references: [id])
+  student     User     @relation("StudentInterviews", fields: [studentId], references: [id])
+
+  @@index([recruiterId])
+  @@index([studentId])
+  @@index([date])
+}
