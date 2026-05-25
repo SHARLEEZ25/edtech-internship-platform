@@ -62,10 +62,31 @@ Focused heavily on workflow orchestration, edge cases, and multi-role patterns.
 
 ## Repository Structure
 
+**Frontend**
 ```
-edtech-internship-platform/
-  frontend/    React 19 + TypeScript + Vite
-  backend/     Node.js + Express v5 + Prisma + PostgreSQL
+src/
+├── api/            Axios service layer — one file per domain (auth, internships, interviews...)
+├── components/     Feature-split UI — auth, dashboard, internships, interviews, onboarding, profile
+├── hooks/          Data-fetching and form hooks, scoped per feature and role
+├── pages/          Route-level views — each role (student/recruiter) has its own subtree
+├── routes/         React Router config — ProtectedRoute, PublicRoute, role-based guards
+├── context/        AuthContext — JWT session and user state
+├── styles/         CSS files co-located by feature
+└── utils/          Formatters, constants, date helpers, PDF generator
+```
+
+**Backend**
+```
+src/
+├── modules/        Feature-sliced — auth, onboarding, internships, applications,
+│                   interviews, recommendations, studentProfile, users, skills, upload
+├── middlewares/    Auth, role guard, onboarding step gate, verified-user check
+├── config/         DB (Prisma), env validation, mail transporter, CORS origins
+├── services/       storage.service.js — AWS S3 presigned URL logic
+└── utils/          AppError class, standardised response helper, error constants
+prisma/
+├── schema.prisma   Full DB schema — User, Internship, Application, Interview, Embeddings
+└── migrations/     10 versioned SQL migrations
 ```
 
 ---
