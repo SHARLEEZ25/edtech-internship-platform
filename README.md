@@ -84,6 +84,6 @@ Interested in running it or exploring the architecture?
 ---
 ## Demo
 
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/88ebd8b161254a0e99cf3eef5ed91fa2-with-play.gif)](https://www.loom.com/share/88ebd8b161254a0e99cf3eef5ed91fa2)
+https://www.loom.com/share/88ebd8b161254a0e99cf3eef5ed91fa2
 
 *Built with a focus on real-world patterns: role-based flows, scheduling, AI matching, and secure uploads.*
