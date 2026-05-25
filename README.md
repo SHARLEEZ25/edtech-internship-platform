@@ -99,11 +99,11 @@ Interested in running it or exploring the architecture?
 
 **Reach out and I'll walk you through it.**
 
-- Email: saleezie@gmail.com
-- LinkedIn: [linkedin.com/in/YOUR_HANDLE](https://linkedin.com/in/YOUR_HANDLE)
+- Email: sharleez.work@gmail.com
+- LinkedIn: https://www.linkedin.com/in/sharleez-tech/
 
 ---
-## Demo
+## Demo video
 
 https://www.loom.com/share/88ebd8b161254a0e99cf3eef5ed91fa2
 
