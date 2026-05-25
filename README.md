@@ -6,12 +6,6 @@ Students and recruiters use the same application but follow entirely different w
 
 ---
 
-## Demo
-
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/88ebd8b161254a0e99cf3eef5ed91fa2-with-play.gif)](https://www.loom.com/share/88ebd8b161254a0e99cf3eef5ed91fa2)
-
----
-
 ## What It Does
 
 ### Student Side
@@ -88,5 +82,8 @@ Interested in running it or exploring the architecture?
 - LinkedIn: [linkedin.com/in/YOUR_HANDLE](https://linkedin.com/in/YOUR_HANDLE)
 
 ---
+## Demo
+
+[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/88ebd8b161254a0e99cf3eef5ed91fa2-with-play.gif)](https://www.loom.com/share/88ebd8b161254a0e99cf3eef5ed91fa2)
 
 *Built with a focus on real-world patterns: role-based flows, scheduling, AI matching, and secure uploads.*
